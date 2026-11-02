@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate | Personal Study Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">✦</span><div><strong>StudyMate</strong><small>PERSONAL STUDY SPACE</small></div></div>
+    <nav>
+      <button class="nav-item active" data-view="library">▦ <span>My Library</span></button>
+      <button class="nav-item" data-view="assistant">✧ <span>PDF Assistant</span></button>
+      <button class="nav-item" data-view="quiz">☷ <span>Practice Quiz</span></button>
+    </nav>
+    <div class="sidebar-note"><span>✦</span><p>Small steps every day lead to big results.</p></div>
+    <div class="profile"><div class="avatar">S</div><div><strong>Student</strong><small>Ready to learn</small></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">YOUR LEARNING WORKSPACE</span><h1 id="page-title">My Library</h1></div><div class="date-pill">✦ &nbsp; Learn something new today</div></header>
+    <section id="library-view" class="view">
+      <div class="welcome"><div><span class="eyebrow light">WELCOME BACK</span><h2>Make learning feel simpler.</h2><p>Upload your notes and turn them into summaries, answers and practice questions.</p></div><div class="welcome-art">✧</div></div>
+      <div class="section-heading"><div><h2>Your study materials</h2><p>Keep all your PDF notes in one place.</p></div><button class="primary-btn" id="upload-trigger">＋ Upload PDF</button></div>
+      <div class="upload-box" id="drop-zone"><div class="upload-icon">↑</div><h3>Drop your PDF here</h3><p>or <button class="text-btn" id="browse-trigger">browse files</button> from your computer</p><small>PDF only · Maximum 15 MB</small><input type="file" id="file-input" accept="application/pdf,.pdf" hidden></div>
+      <div id="status" class="status" aria-live="polite"></div>
+      <div class="section-heading compact"><div><h2>Recent documents</h2><p id="doc-count">Your uploaded study material will appear here.</p></div></div>
+      <div id="documents" class="document-grid"><div class="empty-state">No documents yet. Upload your first PDF to get started.</div></div>
+    </section>
+    <section id="assistant-view" class="view hidden">
+      <div class="section-heading"><div><h2>Ask your PDF</h2><p>Find relevant information from your selected study material.</p></div></div>
+      <div class="tool-card"><label for="assistant-doc">Choose a document</label><select id="assistant-doc"></select><div class="chat-window" id="chat-window"><div class="assistant-message">Hello! Select a PDF and ask a question about its contents.</div></div><form id="chat-form" class="chat-form"><input id="question" placeholder="Ask something about your PDF..." required><button class="primary-btn">Send ↑</button></form></div>
+      <div class="disclaimer">This starter version finds relevant passages using text matching. It does not use a generative AI model.</div>
+    </section>
+    <section id="quiz-view" class="view hidden">
+      <div class="section-heading"><div><h2>Practice and test yourself</h2><p>Generate multiple-choice questions from your PDF.</p></div></div>
+      <div class="tool-card"><label for="quiz-doc">Choose a document</label><select id="quiz-doc"></select><button class="primary-btn" id="generate-quiz">Generate quiz</button><div id="quiz-area"></div></div>
+    </section>
+    <footer>StudyMate · Your personal learning workspace</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
